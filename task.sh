@@ -18,7 +18,8 @@ do
         fi
 done
 
-
+for i in {1..2}
+do
 sub_dir=0
 while [ $sub_dir -eq 0 ]
 do
@@ -33,10 +34,12 @@ do
                 echo " Directory name already exist, Enter different name "
         else
                 mkdir $main/$sub
-	
+        j=1
+	while [ $j -le $i ]
+        do
                 filename=0
 		while [ $filename -eq 0 ]
-		do
+                do
                         read -p "Enter the $j filename" file
                         if [ -z $main/$sub/$file ]
                         then
@@ -51,8 +54,10 @@ do
                                 filename=1
                         fi
                 done
-
+		j=$((j+1))
+        done
         sub_dir=1
-	fi
-done
+        fi
 
+done
+done
