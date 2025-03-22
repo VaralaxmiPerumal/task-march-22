@@ -1,5 +1,4 @@
 #!/bin/bash
-
 main_dir=0
 while [ $main_dir -eq 0 ]
 do
